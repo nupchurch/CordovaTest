@@ -20,7 +20,11 @@
 package com.ntu.way2fungames.forgemaster;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+
+import org.andengine.ui.activity.BaseActivity;
+import org.andengine.ui.activity.SimpleBaseGameActivity;
 import org.apache.cordova.*;
 
 public class forgemaster extends DroidGap
@@ -29,7 +33,13 @@ public class forgemaster extends DroidGap
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        super.loadUrl("file:///android_asset/www/index.html");
+        SimpleBaseGameActivity act1 = new MainActivity();
+        
+        
+        Intent myIntent = new Intent(this, MainActivity.class);
+        this.startActivity(myIntent);
+        
+        //super.loadUrl("file:///android_asset/www/index.html");
     }
 }
 
